@@ -20,6 +20,7 @@ public class TelephoneBook {
 
         System.out.print("\nSearch for whose number? -> ");
         String search = sc.nextLine();
+        sc.close();
         if (contacts.containsKey(search)) {
             System.out.println(search + "'s number: " + contacts.get(search));
         } else {
