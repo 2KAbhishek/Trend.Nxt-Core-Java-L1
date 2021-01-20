@@ -12,7 +12,7 @@ public class RandomConsumer implements Runnable {
     public void run() {
         try {
             int num;
-            // consuming messages until exit message is received
+            // consuming numbers until 0 is received
             while ((num = queue.take()) != 0) {
                 System.out.println("Factorial: " + getFact(num));
             }
