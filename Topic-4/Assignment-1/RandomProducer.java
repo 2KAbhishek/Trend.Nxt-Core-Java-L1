@@ -12,6 +12,7 @@ public class RandomProducer implements Runnable {
     public void run() {
         for (int i = 0; i < 5; i++) {
             try {
+                // For slowing down producer
                 Thread.sleep(i);
                 int random = 1 + (int) (Math.random() * 10);
                 queue.put(random);
@@ -20,7 +21,7 @@ public class RandomProducer implements Runnable {
                 e.printStackTrace();
             }
         }
-
+        // 0 is the exit message
         try {
             queue.put(0);
         } catch (InterruptedException e) {
